@@ -5,14 +5,13 @@ contract KingOfEther {
     address public king;
     // current balance of the king
     uint public balance;
-    // keeps track of how much ether
-    // caller has sent
+    // Number of prev|current kings
     mapping(address => uint) public balances;
 
+    // create deposit function that makes sure you cannot deposit lower than current king.
+    // contract: 0xeF01B26ccD02FfA900CB5Cd34AE8f9CCFdF25502
+
     function claimThrone() external payable {
-        // need to pay more than prev king
-        // to become the new king
-        require(msg.value > balance, "Need to pay more to become the king");
 
         // adds the new king balance
         // to the contract balance
